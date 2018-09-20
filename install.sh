@@ -6,6 +6,7 @@ INSPATH=`pwd`
 echo $INSPATH
 sleep 5
 cd domjudge
+echo "dummy:$MY_RDS_HOSTNAME:$MY_RDS_DB_NAME:$MY_RDS_USERNAME:$MY_RDS_PASSWORD" > etc/dbpasswords.secret
 ./configure --prefix=$INSPATH/domjudge_bin --disable-submitclient --with-webserver-group=webapp --with-domjudge-user=webapp
 make install-domserver
 cd ../domjudge_bin
